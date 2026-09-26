@@ -11,17 +11,13 @@ jobs:
       - name: Check out source
         uses: actions/checkout@v4
 
-      - name: Set up JDK
-        uses: actions/setup-java@v4
+      - name: Set up HA build environment
+        uses: ./.github/actions/setup-build-env
         with:
-          distribution: temurin
-          java-version: "21"
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+          mock-google-services: "true"
 
       - name: Build Full Debug APK
-        run: ./gradlew :app:assembleFullDebug
+        run: ./gradlew :app:assembleFullDebug -PnoStrictMode
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
