@@ -25,7 +25,8 @@ jobs:
           chmod 600 "$HOME/.android/debug.keystore"
 
       - name: Build Full Debug APK
-        run: ./gradlew :app:assembleFullDebug -PnoStrictMode
+        run: |
+    ./gradlew :app:kspFullDebugKotlin -PnoStrictMode --info --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
