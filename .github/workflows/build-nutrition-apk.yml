@@ -20,13 +20,12 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Compile Kotlin
+      - name: Build APK
         run: |
-          ./gradlew :app:compileFullDebugKotlin \
+          ./gradlew :app:assembleFullDebug \
             -x :app:processFullDebugGoogleServices \
             -PnoStrictMode \
             --stacktrace \
-            --info \
             --console=plain
 
       - name: Upload APK
