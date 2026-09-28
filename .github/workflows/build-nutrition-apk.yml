@@ -23,6 +23,7 @@ jobs:
       - name: Compile Kotlin
         run: |
           ./gradlew :app:compileFullDebugKotlin \
+            -x :app:processFullDebugGoogleServices \
             -PnoStrictMode \
             --stacktrace \
             --info \
