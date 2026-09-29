@@ -1078,7 +1078,7 @@ class HealthConnectSensorManager @Inject constructor(
                 "record_id" to record.metadata.id,
                 "meal_type" to getMealType(record.mealType),
                 "meal_type_raw" to record.mealType,
-                "meal_name" to record.mealName,
+                "name" to record.name,
                 "start_time" to record.startTime.toString(),
                 "end_time" to record.endTime.toString(),
                 "source" to record.metadata.dataOrigin.packageName,
